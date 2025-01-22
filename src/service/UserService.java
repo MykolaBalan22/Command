@@ -7,4 +7,11 @@ import java.util.Set;
 public class UserService {
 
     private Set<User> Employees;
+
+    @Override
+    public String toString() {
+        return "UserService{" +
+                "Employees=" + Employees +
+                '}';
+    }
 }

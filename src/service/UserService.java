@@ -14,4 +14,9 @@ public class UserService {
                 "Employees=" + Employees +
                 '}';
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

@@ -2,7 +2,7 @@ package service;
 
 import model.User;
 
-import java.util.Set;
+import java.util.List;
 
 public class UserService {
 
@@ -12,8 +12,12 @@ public class UserService {
         try {
             this.Employees.add(employee);
         } catch (Exception e) {
-            System.out.println("git hub error");
+            System.out.println("bontoy internal error");
         }
+    }
+
+    public UserService(List<User> employees) {
+        Employees = employees;
     }
 
     @Override

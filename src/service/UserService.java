@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class UserService {
 
-    private Set<User> Employees;
+    private List<User> Employees;
 
     @Override
     public String toString() {

@@ -1,4 +1,9 @@
 public class User {
     private String name;
     private String area;
+
+    @Override
+    public String toString(){
+        return "nothing";
+    }
 }

@@ -2,13 +2,21 @@ package service;
 
 import model.User;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class UserService {
 
     private List<User> Employees;
 
-    public void addEmployee(User employee){
+    public UserService(List<User> employees) {
+        Employees = employees;
+    }
+
+    public void addEmployee(User employee) {
         try {
             this.Employees.add(employee);
         } catch (Exception e) {
@@ -16,8 +24,12 @@ public class UserService {
         }
     }
 
-    public UserService(List<User> employees) {
-        Employees = employees;
+    public static void serialiazeToJson(User currentUser) throws IOException {
+
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("\\C:\\Users\\Nikola\\Desktop\\test.txt"));
+        objectOutputStream.writeObject(currentUser);
+        objectOutputStream.flush();
+        objectOutputStream.close();
     }
 
     @Override

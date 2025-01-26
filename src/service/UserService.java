@@ -2,10 +2,7 @@ package service;
 
 import model.User;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.List;
 
 public class UserService {
@@ -30,6 +27,15 @@ public class UserService {
         objectOutputStream.writeObject(currentUser);
         objectOutputStream.flush();
         objectOutputStream.close();
+    }
+
+    public static User getUserFromFile(String filePath) throws IOException, ClassNotFoundException {
+
+        ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filePath));
+        User user =  (User)objectInputStream.readObject();
+        objectInputStream.close();
+        return user;
+
     }
 
     @Override

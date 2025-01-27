@@ -13,6 +13,9 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "User{" +
+                "name='" + name + '\'' +
+                ", area='" + area + '\'' +
+                '}';
     }
 }
